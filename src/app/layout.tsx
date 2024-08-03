@@ -6,6 +6,7 @@ import { title } from "process"
 import { Metadata } from "next"
 import { ClerkProvider } from "@clerk/nextjs"
 import { dark } from "@clerk/themes"
+import Provider from "@/Provider"
 
 const fontSans = FontSans({
   subsets: ["latin"],
@@ -35,7 +36,9 @@ export const metadata: Metadata = {
           fontSans.variable
         )}
       >
-        {children}
+        <Provider>
+          {children}
+        </Provider>
       </body>
     </html>
     </ClerkProvider>
